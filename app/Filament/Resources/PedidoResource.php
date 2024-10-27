@@ -45,6 +45,9 @@ class PedidoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
+    //Orden del sidebar menu de navegacion aparece quinto
+    protected static ?int $navigationSort = 5;
+
     public static function form(Form $form): Form
     {
         return $form

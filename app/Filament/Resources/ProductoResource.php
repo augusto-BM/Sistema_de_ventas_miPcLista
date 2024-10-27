@@ -35,6 +35,9 @@ class ProductoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
 
+    //Orden del sidebar menu de navegacion aparece cuarto
+    protected static ?int $navigationSort = 4;
+
     public static function form(Form $form): Form
     {
         return $form

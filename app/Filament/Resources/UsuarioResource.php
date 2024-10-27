@@ -23,6 +23,12 @@ class UsuarioResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
+    //Para la busqieda global de usuarios por nombre
+    protected static ?string $recordTitleAttribute = 'name';
+
+    //Orden del sidebar menu de navegacion aparece primero
+    protected static ?int $navigationSort = 1;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -84,7 +90,7 @@ class UsuarioResource extends Resource
                 //
                 Tables\Actions\ActionGroup::make([
                     Tables\Actions\ViewAction::make()
-                    ->label('Ver'),
+                        ->label('Ver'),
 
                     Tables\Actions\EditAction::make()
                         ->label('Editar'),
@@ -104,7 +110,14 @@ class UsuarioResource extends Resource
     {
         return [
             //
+            RelationManagers\PedidosRelationManager::class,
         ];
+    }
+
+    //Para la busqueda global de usuarios por nombre y correo
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name', 'email'];
     }
 
     public static function getPages(): array

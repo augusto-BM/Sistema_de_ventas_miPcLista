@@ -30,6 +30,12 @@ class MarcaResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
 
+    //Para la busqieda global de marcas por nombre
+    protected static ?string $recordTitleAttribute = 'nombre';
+
+    //Orden del sidebar menu de navegacion aparece segundo
+    protected static ?int $navigationSort = 2;
+
     public static function form(Form $form): Form
     {
         return $form
