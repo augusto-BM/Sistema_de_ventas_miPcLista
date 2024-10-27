@@ -9,9 +9,11 @@
         @livewireStyles
     </head>
     <body class="bg-slate-200 dark:bg-slate-700">
+        @livewire('partes.navbar')
         <main>
             {{ $slot }}
         </main>
+        @livewire('partes.footer')
         @livewireScripts
     </body>
 </html>
