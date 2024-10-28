@@ -36,7 +36,7 @@ Route::get('/', PaginaPrincipal::class);
 Route::get('/categorias', PaginaCategorias::class);
 Route::get('/productos', PaginaProductos::class);
 Route::get('/carrito', PaginaCarrito::class);
-Route::get('/productos/{producto}', PaginaDetalleProducto::class);
+Route::get('/productos/{identificador_url}', PaginaDetalleProducto::class);
 
 Route::get('/pago', PaginaPago::class);
 Route::get('/mis-pedidos', PaginaMisPedidos::class);
