@@ -2,9 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Ayudantes\GestionCarrito;
+use App\Livewire\Partes\Navbar;
 use App\Models\Categoria;
 use App\Models\Marca;
 use App\Models\Producto;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -13,8 +16,13 @@ use Livewire\WithPagination;
 #[Title('Productos - MiPcLista')]
 class PaginaProductos extends Component
 {
+    //Para mostrar alertas de sweetalert en livewire
+    use LivewireAlert;
+
     //Para tener paginacion de los productos
     use WithPagination;
+
+
 
     //Para filtrar por categorias
     #[Url]
@@ -39,6 +47,23 @@ class PaginaProductos extends Component
     //Para Ordenar por último
     #[Url]
     public $ordenar = 'el_ultimo';
+
+    //Añadir un producto al carrito
+    public function agregarAlCarrito($producto_id)
+    {
+        /* dd($producto_id); */
+        $cuenta_total = GestionCarrito::addItemToCart($producto_id);
+        $this->dispatch('editar-cuenta-carrito', cuenta_total: $cuenta_total)->to(Navbar::class);
+
+        $this->alert('success', 'Producto añadido al carrito', [
+            'position' =>  'bottom-end',
+            'timer' => 3000,
+            'toast' => true,
+            'text' => 'El producto se añadió correctamente al carrito',
+            'showCancelButton' => false,
+            'showConfirmButton' => false
+        ]);
+    }
 
 
     public function render()
