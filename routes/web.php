@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function () {
     });
     Route::get('/pago', PaginaPago::class);
     Route::get('/mis-pedidos', PaginaMisPedidos::class);
-    Route::get('/mis-pedidos/{pedido}', PaginaDetalleMisPedidos::class);
+    Route::get('/mis-pedidos/{pedido}', PaginaDetalleMisPedidos::class)->name('mi-pedido.mostrar');
     Route::get('/exitoso', PaginaExitoso::class)->name('exitoso');
     Route::get('/cancelacion', PaginaCancelacion::class)->name('cancelacion');
 });

@@ -5,8 +5,10 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Ayudantes\GestionCarrito;
+use App\Mail\PedidoRealizado;
 use App\Models\Direccion;
 use App\Models\Pedido;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
 
@@ -110,6 +112,9 @@ class PaginaPago extends Component
         $pedido->detallePedidos()->createMany($detallePedidos); // Insertar detalles del pedido
 
         GestionCarrito::clearCartItemsFromCookie(); // Limpiar el carrito
+
+        Mail::to(request()->user())->send(new PedidoRealizado($pedido)); // Enviar correo electrónico
+        
         return redirect($redireccionamiento_url);
     }
 

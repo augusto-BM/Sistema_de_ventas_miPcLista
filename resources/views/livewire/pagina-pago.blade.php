@@ -83,9 +83,9 @@
                                     class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none @error('estado') border-red-500 @enderror"
                                     id="state" type="text">
                                 </input>
-																@error('estado')
-																	<div class="text-red-500 text-sm">{{ $message }}</div>
-																@enderror
+                                @error('estado')
+                                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div>
                                 <label class="block text-gray-700 dark:text-white mb-1" for="zip">
@@ -95,9 +95,9 @@
                                     class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none @error('codigo_postal') border-red-500 @enderror"
                                     id="zip" type="text">
                                 </input>
-																@error('codigo_postal')
-																	<div class="text-red-500 text-sm">{{ $message }}</div>
-																@enderror
+                                @error('codigo_postal')
+                                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                                 for="hosting-small">
                                 <div class="block">
                                     <div class="w-full text-lg font-semibold">
-                                        Contra entrega
+                                        Pago contra entrega
                                     </div>
                                 </div>
                                 <svg aria-hidden="true" class="w-5 h-5 ms-3 rtl:rotate-180" fill="none"
@@ -145,9 +145,9 @@
                             </input>
                         </li>
                     </ul>
-										@error('metodo_pago')
-										 <div class="text-red-500 text-sm">{{ $message }}</div>
-										@enderror
+                    @error('metodo_pago')
+                        <div class="text-red-500 text-sm">{{ $message }}</div>
+                    @enderror
                 </div>
                 <!-- End Card -->
             </div>
@@ -193,7 +193,8 @@
                 </div>
                 <button type="submit"
                     class="bg-green-500 mt-4 w-full p-3 rounded-lg text-lg text-white hover:bg-green-600">
-                    Realizar pedido
+                    <span wire:loading.remove>Realizar pedido</span>
+                    <span wire:loading>Procesando...</span>
                 </button>
                 <div class="bg-white mt-4 rounded-xl shadow p-4 sm:p-7 dark:bg-slate-900">
                     <div class="text-xl font-bold underline text-gray-700 dark:text-white mb-2">
