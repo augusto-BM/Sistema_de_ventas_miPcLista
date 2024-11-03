@@ -13,7 +13,7 @@
 
                     <!-- Buttons -->
                     <div class="mt-7 grid gap-3 w-full sm:inline-flex">
-                        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        <a wire:navigate class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             href="/registrar">
                             Crear Cuenta
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -159,37 +159,12 @@
                 <!-- End Col -->
 
                 <div class="relative ms-4">
-                    <img class="w-full rounded-md"
-                        src="https://static.vecteezy.com/system/resources/previews/011/993/278/non_2x/3d-render-online-shopping-bag-using-credit-card-or-cash-for-future-use-credit-card-money-financial-security-on-mobile-3d-application-3d-shop-purchase-basket-retail-store-on-e-commerce-free-png.png"
+                    <img class="w-full rounded-3xl border-none"
+                        src="data:image/png;base64,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"
                         alt="Image Description">
                     <div
                         class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-slate-800 dark:via-slate-900/0 dark:to-slate-900/0">
                     </div>
-
-                    <!-- SVG-->
-                    <div class="absolute bottom-0 start-0">
-                        <svg class="w-2/3 ms-auto h-auto text-white dark:text-slate-900" width="630"
-                            height="451" viewBox="0 0 630 451" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="531" y="352" width="99" height="99" fill="currentColor" />
-                            <rect x="140" y="352" width="106" height="99" fill="currentColor" />
-                            <rect x="482" y="402" width="64" height="49" fill="currentColor" />
-                            <rect x="433" y="402" width="63" height="49" fill="currentColor" />
-                            <rect x="384" y="352" width="49" height="50" fill="currentColor" />
-                            <rect x="531" y="328" width="50" height="50" fill="currentColor" />
-                            <rect x="99" y="303" width="49" height="58" fill="currentColor" />
-                            <rect x="99" y="352" width="49" height="50" fill="currentColor" />
-                            <rect x="99" y="392" width="49" height="59" fill="currentColor" />
-                            <rect x="44" y="402" width="66" height="49" fill="currentColor" />
-                            <rect x="234" y="402" width="62" height="49" fill="currentColor" />
-                            <rect x="334" y="303" width="50" height="49" fill="currentColor" />
-                            <rect x="581" width="49" height="49" fill="currentColor" />
-                            <rect x="581" width="49" height="64" fill="currentColor" />
-                            <rect x="482" y="123" width="49" height="49" fill="currentColor" />
-                            <rect x="507" y="124" width="49" height="24" fill="currentColor" />
-                            <rect x="531" y="49" width="99" height="99" fill="currentColor" />
-                        </svg>
-                    </div>
-                    <!-- End SVG-->
                 </div>
                 <!-- End Col -->
             </div>

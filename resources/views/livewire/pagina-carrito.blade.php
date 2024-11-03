@@ -68,7 +68,7 @@
                         <span class="font-semibold">{{ Number::currency($cantidad_total, 'PEN') }}</span>
                     </div>
                     @if ($productos_carrito)
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Pagar</button>
+                        <a href="/pago" class="bg-blue-500 block text-center text-white py-2 px-4 rounded-lg mt-4 w-full">Pagar</a>
                     @endif
                 </div>
             </div>

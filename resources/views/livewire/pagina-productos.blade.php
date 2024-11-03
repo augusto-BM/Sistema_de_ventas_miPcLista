@@ -55,7 +55,7 @@
                                 <label for="" class="flex items-center dark:text-gray-300">
                                     <input type="checkbox" id="en_oferta" wire:model.live="en_oferta" value="1"
                                         class="w-4 h-4 mr-2">
-                                    <span class="text-lg dark:text-gray-400">On Sale</span>
+                                    <span class="text-lg dark:text-gray-400">En oferta</span>
                                 </label>
                             </li>
                         </ul>
