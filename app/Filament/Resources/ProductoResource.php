@@ -70,6 +70,7 @@ class ProductoResource extends Resource
                     Section::make('imagen')->schema([
                         FileUpload::make('imagen')
                             ->Label('Imagenes')
+                            ->required()
                             ->multiple()
                             ->directory('productos')
                             ->maxFiles(5)
@@ -153,10 +154,12 @@ class ProductoResource extends Resource
                     ->boolean(),
                 
                 TextColumn::make('created_at')
+                    ->label('Fecha de Creacion')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('Ultima Actualizacion')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

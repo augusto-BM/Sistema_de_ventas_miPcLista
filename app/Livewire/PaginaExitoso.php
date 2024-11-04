@@ -24,11 +24,11 @@ class PaginaExitoso extends Component
             $session_info = Session::retrieve($this->session_id);
             /* dd($session_info); */
             if ($session_info->payment_status != 'paid') {
-                $ultimo_pedido->estado_pago = 'Fallido';
+                $ultimo_pedido->estado_pago = 'fallido';
                 $ultimo_pedido->save();
                 return redirect('/cancelacion');
             } else if ($session_info->payment_status == 'paid') {
-                $ultimo_pedido->estado_pago = 'Pagado';
+                $ultimo_pedido->estado_pago = 'pagado';
                 $ultimo_pedido->save();
             }
         }

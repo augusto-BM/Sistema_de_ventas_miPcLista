@@ -72,6 +72,7 @@ class MarcaResource extends Resource
                     FileUpload::make('imagen')
                         ->label('Imagen')
                         ->image()
+                        ->required()
                         ->directory('marcas'),
 
                     Toggle::make('es_activo')
@@ -95,10 +96,12 @@ class MarcaResource extends Resource
                 Tables\Columns\IconColumn::make('es_activo')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Fecha de Creacion')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Ultima Actualizacion')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

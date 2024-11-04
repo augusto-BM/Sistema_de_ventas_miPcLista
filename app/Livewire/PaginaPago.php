@@ -44,7 +44,7 @@ class PaginaPago extends Component
         foreach ($productos_carrito as $producto) {
             $linea_productos[] = [
                 'price_data' => [
-                    'currency' => 'usd',
+                    'currency' => 'pen',
                     'unit_amount' => $producto['unit_amount'] * 100, // Convertir a centavos
                     'product_data' => [
                         'name' => $producto['name'],
