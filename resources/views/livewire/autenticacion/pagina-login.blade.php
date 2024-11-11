@@ -37,7 +37,7 @@
                                         aria-describedby="email-error">
                                     @error('email')
                                         <div
-                                            class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                                            class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
                                             <svg class="h-5 w-5 text-red-500" width="16" height="16"
                                                 fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                                 <path
@@ -66,7 +66,7 @@
                                         aria-describedby="password-error">
                                     @error('password')
                                         <div
-                                            class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                                            class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
                                             <svg class="h-5 w-5 text-red-500" width="16" height="16"
                                                 fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                                                 <path
